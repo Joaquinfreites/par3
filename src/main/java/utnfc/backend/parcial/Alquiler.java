@@ -13,19 +13,6 @@ public class Alquiler {
     public Alquiler() {
 
     }
-    public Alquiler(String id, String cliente, String categoria, String sucursal,
-                    int dias, double tarifaDiaria, int kmIncluidos) {
-        this.id = textoObligatorio(id, "id");
-        this.cliente = textoObligatorio(cliente, "cliente");
-        this.categoria = textoObligatorio(categoria, "categoria");
-        this.sucursal = textoObligatorio(sucursal, "sucursal");
-        if (dias <= 0 || tarifaDiaria <= 0 || kmIncluidos < 0) {
-            throw new IllegalArgumentException("dias, tarifa y kilometros deben ser validos");
-        }
-        this.dias = dias;
-        this.tarifaDiaria = tarifaDiaria;
-        this.kmIncluidos = kmIncluidos;
-    }
 
     public Alquiler(String id, String cliente, String categoria, String sucursal,
                     int dias, double tarifaDiaria, int kmIncluidos, String estado) {
@@ -51,7 +38,7 @@ public class Alquiler {
         }
         return new Alquiler(campos[0], campos[1], campos[2], campos[3],
                 Integer.parseInt(campos[4]), Double.parseDouble(campos[5]),
-                Integer.parseInt(campos[6]));
+                Integer.parseInt(campos[6]),campos[7]);
     }
 
     public double importe() {

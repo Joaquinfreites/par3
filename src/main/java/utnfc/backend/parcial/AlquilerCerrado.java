@@ -10,7 +10,6 @@ public class AlquilerCerrado extends Alquiler {
         }
         this.kmRecorridos = kmRecorridos;
     }
-
     @Override
     public double importe(){
         double importeBase = dias * tarifaDiaria;
