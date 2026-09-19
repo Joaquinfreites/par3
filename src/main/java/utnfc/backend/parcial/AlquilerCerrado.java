@@ -3,8 +3,8 @@ package utnfc.backend.parcial;
 public class AlquilerCerrado extends Alquiler {
     private final int kmRecorridos;
 
-    public AlquilerCerrado(String id, String cliente, String categoria, String sucursal, int dias, double tarifaDiaria, int kmIncluidos, int kmRecorridos) {
-        super(id, cliente, categoria, sucursal, dias, tarifaDiaria, kmIncluidos);
+    public AlquilerCerrado(String id, String cliente, String categoria, String sucursal, int dias, double tarifaDiaria, int kmIncluidos, String estado, int kmRecorridos) {
+        super(id, cliente, categoria, sucursal, dias, tarifaDiaria, kmIncluidos, estado);
         if (kmRecorridos < 0) {
             throw new IllegalArgumentException("Los kilometros recorridos deben ser validos");
         }
@@ -22,6 +22,11 @@ public class AlquilerCerrado extends Alquiler {
         }
         double importeTotal =  importeBase + adicional;
         return  importeTotal;
-
+    }
+    @Override
+    public String toString() {
+        return super.toString() + " | AlquilerCerrado{" +
+                "kmRecorridos=" + kmRecorridos +
+                '}';
     }
 }

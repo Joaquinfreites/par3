@@ -95,4 +95,13 @@ public class Alquiler {
         }
         return valor.strip();
     }
+    @Override
+    public String toString() {
+        return "Alquiler{" +
+                "id='" + id + '\'' +
+                ", cliente='" + cliente + '\'' +
+                ", categoria='" + categoria + '\'' +
+                ", dias=" + dias +
+                '}';
+    }
 }
