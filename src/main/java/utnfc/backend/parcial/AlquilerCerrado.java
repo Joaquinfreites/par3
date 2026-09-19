@@ -10,19 +10,31 @@ public class AlquilerCerrado extends Alquiler {
         }
         this.kmRecorridos = kmRecorridos;
     }
+
     @Override
-    public double importe(){
+    public double importe() {
         double importeBase = dias * tarifaDiaria;
         double adicional = 0.0;
-        if (kmRecorridos > kmIncluidos){
-             adicional = (kmRecorridos - kmIncluidos) * 150;
+        if (kmRecorridos > kmIncluidos) {
+            adicional = (kmRecorridos - kmIncluidos) * 150;
         }
-        if( kmRecorridos > kmIncluidos * 5){
+        if (kmRecorridos > kmIncluidos * 5) {
             throw new IllegalArgumentException("Fila rechazada");
         }
-        double importeTotal =  importeBase + adicional;
-        return  importeTotal;
+        double importeTotal = importeBase + adicional;
+        return importeTotal;
     }
+
+    @Override
+    public boolean estaCerrado() {
+        return true;
+    }
+
+    @Override
+    public String estado() {
+        return "CERRADO";
+    }
+
     @Override
     public String toString() {
         return super.toString() + " | AlquilerCerrado{" +
